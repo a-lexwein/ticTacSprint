@@ -1,0 +1,19 @@
+{
+  "name": "tictacsprint",
+  "version": "1.0.0",
+  "description": "minimal tic tac toe",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-lexwein/ticTacSprint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-lexwein/ticTacSprint/issues"
+  },
+  "homepage": "https://github.com/a-lexwein/ticTacSprint#readme"
+}
