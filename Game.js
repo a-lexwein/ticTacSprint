@@ -1,30 +1,31 @@
 class Game {
   constructor() {
-    var players = ['X', 'O']
-    var currentMove = 0;
+    this.players = ['X', 'O']
+    this.currentMove = 0;
     this.winner = undefined;
     this.board = [ ['', '', ''], ['', '', ''], ['', '', ''] ]
-    this.currentPlayer = players[currentMove];
+    this.currentPlayer = this.players[this.currentMove];
   }
 
   changePlayer() {
-    this.currentPlayer = players[currentMove++ % 2];
-  },
+    this.currentPlayer = this.players[++this.currentMove % 2];
+  }
 
   placeMarker(x,y) {
-    if (this.board[x][y] === 0) {
-      this.board[x][y] = this.currentPlayer;
-    }
+    if (!this.board[x][y] === '') return
+
+    this.board[x][y] = this.currentPlayer;
+
 
     // Check if it's a winner
-    if (checkWinner(x,y)) this.winner = players[currentMove]
+    if (this.checkWinner(x,y)) this.winner = this.players[this.currentMove]
 
     // If a winner: deliver winner:
 
     // If not winner, toggle player
 
     this.changePlayer()
-  },
+  }
 
   checkRowWinner(i) {
     if (JSON.stringify(this.board[i]) === JSON.stringify([0,0,0].fill(this.currentPlayer))) {
@@ -66,13 +67,13 @@ class Game {
   }
 
   checkWinner(x,y) {
-    return checkRowWinner(x)
-    || checkColWinner(y)
-    || checkDiagWinner(x,y)
+    return this.checkRowWinner(x)
+    || this.checkColWinner(y)
+    || this.checkDiagWinner(x,y)
   }
 
   render() {
-    for var
+
   }
 
 
